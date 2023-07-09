@@ -1,0 +1,11 @@
+<Project>
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		
+		<BaseOutputPath>$(SolutionDir)Builds</BaseOutputPath>
+		
+		<BaseIntermediateOutputPath>$(SolutionDir)Intermediate\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+		<IntermediateOutputPath>$(BaseIntermediateOutputPath)\$(Configuration)</IntermediateOutputPath>
+	</PropertyGroup>
+</Project>

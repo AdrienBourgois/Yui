@@ -5,6 +5,20 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Runtime</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Core\Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="NLog" Version="5.2.2" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <!--<GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>-->
     </PropertyGroup>
 
 </Project>
