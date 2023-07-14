@@ -1,17 +1,23 @@
-﻿using NLog;
-using NLog.Config;
-using NLog.Targets;
+﻿using Microsoft.Extensions.Logging;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace Core;
 
 public class Graph
 {
-    public void Run()
+    private ILogger logger;
+
+    public Graph(GraphSettings _settings)
     {
-        LoggingConfiguration config = new();
-        ConsoleTarget log_console = new("Basic Log");
-        config.AddRule(LogLevel.Info, LogLevel.Fatal, log_console);
-        LogManager.Configuration = config;
-        LogManager.GetCurrentClassLogger().Info("Log");
+        logger = _settings.loggerProvider.CreateLogger("Graph");
+    }
+    
+    public async Task<bool> Run(CancellationToken _cancellationToken = default)
+    {
+        logger.LogDebug("Run Graph");
+        
+        await Task.Delay(TimeSpan.FromSeconds(2), _cancellationToken);
+
+        return true;
     }
 }
